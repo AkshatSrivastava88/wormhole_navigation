@@ -18,7 +18,7 @@ This project implements a robust multi-map navigation system for autonomous mobi
 
 ---
 
-## Maps for Room 1 and Room 2 
+## Maps for Room 1 and Room 2 with overlapping areas
 
 <p align="center">
   <img src="https://github.com/AkshatSrivastava88/wormhole_navigation/blob/master/media/map1.jpg" alt="Image 1" width="45%"/>
