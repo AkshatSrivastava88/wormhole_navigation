@@ -177,40 +177,40 @@ source devel/setup.bash
         nsecs: 0
       id: ''
     goal:
-      target_x: -5.0
+      target_x: -7.0
       target_y: -6.0
-      target_map: 'map2'"
+      target_map: 'map1'"
     ```
 
 4. **Send a navigation goal (example using action client file):**
-  ```py
-  #!/usr/bin/env python3
-  import rospy
-  import actionlib
-  from multi_map_nav.msg import NavigateToGoalAction, NavigateToGoalGoal
+    ```py
+    #!/usr/bin/env python3
+    import rospy
+    import actionlib
+    from multi_map_nav.msg import NavigateToGoalAction, NavigateToGoalGoal
 
-  def send_goal():
-      client = actionlib.SimpleActionClient('navigate_to_goal', NavigateToGoalAction)
-      client.wait_for_server()
+    def send_goal():
+        client = actionlib.SimpleActionClient('navigate_to_goal', NavigateToGoalAction)
+        client.wait_for_server()
 
-      goal = NavigateToGoalGoal()
-      goal.target_map = "map2"
-      goal.target_x = 2.5
-      goal.target_y = 3.0
+        goal = NavigateToGoalGoal()
+        goal.target_map = "map2"
+        goal.target_x = 7.0
+        goal.target_y = -3.0
 
-      client.send_goal(goal)
-      client.wait_for_result()
+        client.send_goal(goal)
+        client.wait_for_result()
 
-      return client.get_result()
+        return client.get_result()
 
-  if __name__ == '__main__':
-      rospy.init_node('navigation_client')
-      result = send_goal()
-      print("Result:", result.success, result.message)
-  ``` 
+    if __name__ == '__main__':
+        rospy.init_node('navigation_client')
+        result = send_goal()
+        print("Result:", result.success, result.message)
+    ``` 
 
 
-   
+
 
 ---
 
