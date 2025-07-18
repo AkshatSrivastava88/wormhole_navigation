@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="wormhole_navigation" type="navigation_server" name="navigation_server" output="screen">
+    <param name="wormhole_db_path" value="$(find wormhole_navigation)/database/wormholes.db" />
+    <param name="map_folder" value="$(find wormhole_navigation)/maps" />
+  </node>
+</launch>
+
