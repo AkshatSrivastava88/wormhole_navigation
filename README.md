@@ -121,7 +121,6 @@ wormhole_navigation/
 
 ## 🛠️ Dependencies
 
-- ROS Noetic
 - move_base
 - actionlib
 - dwa_planner
@@ -163,7 +162,54 @@ source devel/setup.bash
      target_y: -3.5
      target_map: 'map2'"
    ```
-   Or use the provided action client script in the repository.
+
+3. ```bash
+  rostopic pub /navigate_to_goal/goal multi_map_nav/NavigateToGoalActionGoal "header:
+    seq: 0
+    stamp:
+      secs: 0
+      nsecs: 0
+    frame_id: ''
+  goal_id:
+    stamp:
+      secs: 0
+      nsecs: 0
+    id: ''
+  goal:
+    target_x: -5.0
+    target_y: -6.0
+    target_map: 'map2'"
+  ```
+
+4. **Send a navigation goal (example using action client file):**
+  ```py
+  #!/usr/bin/env python3
+  import rospy
+  import actionlib
+  from multi_map_nav.msg import NavigateToGoalAction, NavigateToGoalGoal
+
+  def send_goal():
+      client = actionlib.SimpleActionClient('navigate_to_goal', NavigateToGoalAction)
+      client.wait_for_server()
+
+      goal = NavigateToGoalGoal()
+      goal.target_map = "map2"
+      goal.target_x = 2.5
+      goal.target_y = 3.0
+
+      client.send_goal(goal)
+      client.wait_for_result()
+
+      return client.get_result()
+
+  if __name__ == '__main__':
+      rospy.init_node('navigation_client')
+      result = send_goal()
+      print("Result:", result.success, result.message)
+  ``` 
+
+
+   
 
 ---
 
