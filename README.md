@@ -163,23 +163,24 @@ source devel/setup.bash
      target_map: 'map2'"
    ```
 
-3. ```bash
-  rostopic pub /navigate_to_goal/goal multi_map_nav/NavigateToGoalActionGoal "header:
-    seq: 0
-    stamp:
-      secs: 0
-      nsecs: 0
-    frame_id: ''
-  goal_id:
-    stamp:
-      secs: 0
-      nsecs: 0
-    id: ''
-  goal:
-    target_x: -5.0
-    target_y: -6.0
-    target_map: 'map2'"
-  ```
+3. 
+    ```bash
+    rostopic pub /navigate_to_goal/goal multi_map_nav/NavigateToGoalActionGoal "header:
+      seq: 0
+      stamp:
+        secs: 0
+        nsecs: 0
+      frame_id: ''
+    goal_id:
+      stamp:
+        secs: 0
+        nsecs: 0
+      id: ''
+    goal:
+      target_x: -5.0
+      target_y: -6.0
+      target_map: 'map2'"
+    ```
 
 4. **Send a navigation goal (example using action client file):**
   ```py
