@@ -1,7 +1,7 @@
 # 🗺️ Wormhole Navigation System for Multi-Map Robots
 
 **Author:** Akshat Srivastava  
-**Platform:** ANSCER AR100 (adaptable to any AMR)  
+**Test Platform:** ANSCER AR100 (adaptable to any AMR)  
 **Contact:** akshatsrivastava8840@gmail.com
 
 ---
@@ -9,6 +9,12 @@
 ## 🚀 Overview
 
 This project implements a robust multi-map navigation system for autonomous mobile robots, enabling seamless navigation between separately mapped rooms using a "wormhole" mechanism. The robot can switch maps at predefined transition points (wormholes), such as doorways or hallways, and continue navigation to its goal in the new map. The system is modular, extensible, and designed for easy integration with existing ROS-based navigation stacks.
+
+---
+
+## 📷 Gazebo Simulation with Anscer AR100
+
+![Gazebo Simulation environment with Anscer AR100](https://github.com/AkshatSrivastava88/wormhole_navigation/blob/master/media/gazebo_simulation.png)
 
 ---
 
