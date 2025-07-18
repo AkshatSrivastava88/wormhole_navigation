@@ -18,6 +18,13 @@ This project implements a robust multi-map navigation system for autonomous mobi
 
 ---
 
+## Maps for Room 1 and Room 2 
+
+<p align="center">
+  <img src="https://github.com/AkshatSrivastava88/wormhole_navigation/blob/master/media/map1.jpg" alt="Image 1" width="45%"/>
+  <img src="https://github.com/AkshatSrivastava88/wormhole_navigation/blob/master/media/map2.jpg" alt="Image 2" width="45%"/>
+</p>
+
 ## 🌀 What is a Wormhole?
 
 A **wormhole** in this context is a special, predefined location in one map that links directly to a corresponding location in another map—typically an overlapping region like a doorway or corridor. When the robot reaches a wormhole, it can "jump" to the corresponding spot in the next map, relaunching the map server and continuing navigation as if the environment were continuous.
